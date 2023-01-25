@@ -3,7 +3,7 @@ export type User = {
     id: number,
     name: string,
     username: string,
-    passport: string
+    password: string
 
 }
 @Injectable()
@@ -12,19 +12,19 @@ export class UsersService {
         {
             id: 1,
             name: 'BARRY',
-            username: 'Algassby',
-            passport: '123456'
+            username: 'algassby',
+            password: '123456'
         },
         {
             id: 2,
             name: 'BARRIO',
             username: 'barrio',
-            passport: '123456'
+            password: '123456'
         }
     ]
     constructor(){}
 
-    async findOne(username: string): Promise<User> | undefined{
+    async findById(username: string): Promise<User> | undefined{
         return this.users.find(user=> user.username === username);
     }
 }
